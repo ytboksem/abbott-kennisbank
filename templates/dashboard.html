@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>Dashboard</h1>
+
+<div class="card">
+    <h3>Totaal artikelen: {{ total }}</h3>
+</div>
+
+<h2>Laatst toegevoegd</h2>
+{% for article in latest %}
+<div class="card">
+    <a href="{{ url_for('detail', id=article[0]) }}">
+        <strong>{{ article[1] }}</strong>
+    </a>
+</div>
+{% endfor %}
+
+<h2>Meest bekeken</h2>
+{% for article in most_viewed %}
+<div class="card">
+    <a href="{{ url_for('detail', id=article[0]) }}">
+        <strong>{{ article[1] }}</strong>
+    </a>
+</div>
+{% endfor %}
+
+{% endblock %}

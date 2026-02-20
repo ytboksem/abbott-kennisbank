@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>{{ article[1] }}</h1>
+
+<p><strong>Auteur:</strong> {{ article[2] }}</p>
+<p><strong>Afdeling:</strong> {{ article[3] }}</p>
+<p><strong>Categorie:</strong> {{ article[4] }}</p>
+<p><strong>Versie:</strong> {{ article[5] }}</p>
+<p><strong>Datum:</strong> {{ article[9] }}</p>
+
+<hr>
+
+<p>{{ article[6] }}</p>
+
+{% if article[7] %}
+<p>
+    <a href="{{ article[7] }}" target="_blank">Video bekijken</a>
+</p>
+{% endif %}
+
+{% if article[8] %}
+<p>
+    <a href="{{ url_for('static', filename='uploads/' + article[8]) }}">
+        Bestand downloaden
+    </a>
+</p>
+{% endif %}
+
+{% endblock %}

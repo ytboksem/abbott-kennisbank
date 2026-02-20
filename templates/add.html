@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>Nieuw Artikel</h1>
+
+<form method="POST" enctype="multipart/form-data">
+    Titel:
+    <input type="text" name="title" required>
+
+    Auteur:
+    <input type="text" name="author" required>
+
+    Afdeling:
+    <input type="text" name="department">
+
+    Categorie:
+    <select name="category">
+        <option>IT</option>
+        <option>Finance</option>
+        <option>HR</option>
+        <option>Operations</option>
+    </select>
+
+    Versie:
+    <input type="text" name="version">
+
+    Inhoud:
+    <textarea name="content" rows="6"></textarea>
+
+    Video link:
+    <input type="text" name="video_link">
+
+    Bestand (pdf/foto):
+    <input type="file" name="file">
+
+    <button type="submit">Opslaan</button>
+</form>
+
+{% endblock %}
